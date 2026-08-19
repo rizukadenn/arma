@@ -7,6 +7,7 @@
 
   --blush: #e8a9b5;
   --blush-light: #f8dce2;
+
   --pink: #d8899b;
   --rose: #bd687c;
 
@@ -35,50 +36,62 @@
 }
 
 
-/* ===============================
+/* =========================================
    RESET
-================================ */
+========================================= */
 
 * {
+
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
+
 }
 
 html {
+
   scroll-behavior: smooth;
+
 }
 
 body {
+
   background: var(--cream);
+
   color: var(--text);
+
   font-family: var(--sans);
+
   overflow-x: hidden;
+
 }
 
 button {
+
   font-family: inherit;
+
   cursor: pointer;
+
   border: none;
-}
 
-img {
-  max-width: 100%;
 }
 
 
-/* ===============================
+/* =========================================
    LOADER
-================================ */
+========================================= */
 
 #loader {
 
   position: fixed;
+
   inset: 0;
 
-  z-index: 9999;
+  z-index: 99999;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -92,15 +105,21 @@ img {
   transition:
     opacity 1s ease,
     visibility 1s ease;
+
 }
 
 #loader.hide {
+
   opacity: 0;
+
   visibility: hidden;
+
 }
 
 .loader-content {
+
   text-align: center;
+
 }
 
 .loader-flower {
@@ -111,6 +130,7 @@ img {
 
   animation:
     loaderSpin 3s ease-in-out infinite;
+
 }
 
 .loader-small {
@@ -124,6 +144,7 @@ img {
   text-transform: uppercase;
 
   color: var(--text-light);
+
 }
 
 .loader-content h1 {
@@ -132,11 +153,13 @@ img {
 
   font-family: var(--serif);
 
-  font-size: clamp(35px, 7vw, 65px);
+  font-size:
+    clamp(35px, 7vw, 65px);
 
   font-weight: 500;
 
   font-style: italic;
+
 }
 
 .loader-line {
@@ -147,9 +170,11 @@ img {
 
   margin: 30px auto;
 
-  background: rgba(141, 82, 96, .2);
+  background:
+    rgba(141, 82, 96, .2);
 
   overflow: hidden;
+
 }
 
 .loader-line span {
@@ -162,7 +187,9 @@ img {
 
   background: var(--rose);
 
-  animation: loading 2.2s ease forwards;
+  animation:
+    loading 2.2s ease forwards;
+
 }
 
 .loader-hint {
@@ -174,6 +201,7 @@ img {
   text-transform: uppercase;
 
   opacity: .5;
+
 }
 
 @keyframes loading {
@@ -188,19 +216,27 @@ img {
 
   0%,
   100% {
-    transform: rotate(-10deg) scale(1);
+
+    transform:
+      rotate(-10deg)
+      scale(1);
+
   }
 
   50% {
-    transform: rotate(10deg) scale(1.1);
+
+    transform:
+      rotate(10deg)
+      scale(1.1);
+
   }
 
 }
 
 
-/* ===============================
+/* =========================================
    PARTICLES
-================================ */
+========================================= */
 
 #particles {
 
@@ -210,9 +246,10 @@ img {
 
   pointer-events: none;
 
-  z-index: 5;
+  z-index: 20;
 
   overflow: hidden;
+
 }
 
 .particle {
@@ -227,38 +264,49 @@ img {
 
   animation:
     floatParticle linear forwards;
+
 }
 
 @keyframes floatParticle {
 
   0% {
+
     transform:
       translateY(0)
       rotate(0deg);
+
     opacity: 0;
+
   }
 
   10% {
+
     opacity: .4;
+
   }
 
   90% {
+
     opacity: .25;
+
   }
 
   100% {
+
     transform:
       translateY(-110vh)
       rotate(360deg);
+
     opacity: 0;
+
   }
 
 }
 
 
-/* ===============================
+/* =========================================
    INTRO
-================================ */
+========================================= */
 
 #intro {
 
@@ -285,6 +333,7 @@ img {
       #fffaf8 50%,
       #f4d4dc
     );
+
 }
 
 .intro-content {
@@ -296,6 +345,7 @@ img {
   text-align: center;
 
   padding: 40px 20px;
+
 }
 
 .eyebrow {
@@ -309,19 +359,20 @@ img {
   color: var(--rose);
 
   margin-bottom: 15px;
+
 }
 
 .intro-content h1 {
 
   font-family: var(--serif);
 
-  font-size: clamp(50px, 8vw, 95px);
+  font-size:
+    clamp(50px, 8vw, 95px);
 
   line-height: .9;
 
   font-weight: 500;
 
-  color: var(--text);
 }
 
 .intro-content h1 span {
@@ -331,6 +382,7 @@ img {
   color: var(--rose);
 
   font-style: italic;
+
 }
 
 .intro-description {
@@ -340,16 +392,18 @@ img {
   font-size: 13px;
 
   color: var(--text-light);
+
 }
 
 
-/* ===============================
+/* =========================================
    ENVELOPE
-================================ */
+========================================= */
 
 .envelope-wrapper {
 
   width: 300px;
+
   height: 210px;
 
   margin: 55px auto 25px;
@@ -359,6 +413,7 @@ img {
   perspective: 1000px;
 
   cursor: pointer;
+
 }
 
 .envelope-shadow {
@@ -366,9 +421,11 @@ img {
   position: absolute;
 
   width: 240px;
+
   height: 35px;
 
-  background: rgba(115, 58, 72, .18);
+  background:
+    rgba(115, 58, 72, .18);
 
   filter: blur(15px);
 
@@ -376,23 +433,24 @@ img {
 
   left: 50%;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   border-radius: 50%;
 
-  transition: .8s;
 }
 
 .envelope {
 
   width: 100%;
+
   height: 100%;
 
   position: relative;
 
-  transform-style: preserve-3d;
+  transform-style:
+    preserve-3d;
 
-  transition: transform 1s ease;
 }
 
 .envelope-back {
@@ -411,7 +469,9 @@ img {
   border-radius: 4px;
 
   box-shadow:
-    0 20px 45px rgba(120, 60, 75, .2);
+    0 20px 45px
+    rgba(120,60,75,.2);
+
 }
 
 .letter-preview {
@@ -419,14 +479,17 @@ img {
   position: absolute;
 
   width: 82%;
+
   height: 80%;
 
   left: 9%;
+
   top: 5%;
 
   background: #fffaf7;
 
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
@@ -439,8 +502,8 @@ img {
   font-family: var(--serif);
 
   transition:
-    transform 1s ease,
-    top 1s ease;
+    transform 1s ease;
+
 }
 
 .letter-preview span {
@@ -448,6 +511,7 @@ img {
   font-size: 28px;
 
   font-style: italic;
+
 }
 
 .letter-preview small {
@@ -461,6 +525,7 @@ img {
   letter-spacing: 2px;
 
   text-transform: uppercase;
+
 }
 
 .envelope-front {
@@ -488,6 +553,7 @@ img {
     );
 
   border-radius: 4px;
+
 }
 
 .envelope-flap {
@@ -495,6 +561,7 @@ img {
   position: absolute;
 
   width: 100%;
+
   height: 100%;
 
   z-index: 5;
@@ -508,10 +575,12 @@ img {
       50% 58%
     );
 
-  transform-origin: top center;
+  transform-origin:
+    top center;
 
   transition:
-    transform 1s cubic-bezier(.7,0,.2,1);
+    transform 1s
+    cubic-bezier(.7,0,.2,1);
 
 }
 
@@ -522,11 +591,14 @@ img {
   z-index: 6;
 
   left: 50%;
+
   top: 47%;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(-50%, -50%);
 
   width: 48px;
+
   height: 48px;
 
   border-radius: 50%;
@@ -548,46 +620,42 @@ img {
   font-size: 21px;
 
   box-shadow:
-    0 4px 12px rgba(100, 40, 55, .2);
+    0 4px 12px
+    rgba(100,40,55,.2);
 
   transition:
     opacity .5s ease,
     transform .7s ease;
-}
-
-
-/* OPEN ENVELOPE */
-
-.envelope-wrapper.open .envelope-flap {
-
-  transform: rotateX(180deg);
 
 }
 
-.envelope-wrapper.open .wax-seal {
+.envelope-wrapper.open
+.envelope-flap {
+
+  transform:
+    rotateX(180deg);
+
+}
+
+.envelope-wrapper.open
+.wax-seal {
 
   opacity: 0;
 
   transform:
     translate(-50%, -50%)
     scale(.3);
+
 }
 
-.envelope-wrapper.open .letter-preview {
+.envelope-wrapper.open
+.letter-preview {
 
   transform:
     translateY(-120px);
 
   z-index: 3;
-}
 
-.envelope-wrapper.open .envelope-shadow {
-
-  transform:
-    translateX(-50%)
-    scale(1.1);
-
-  opacity: .25;
 }
 
 .click-hint {
@@ -602,6 +670,7 @@ img {
 
   animation:
     hintPulse 2s infinite;
+
 }
 
 .click-hint span {
@@ -623,9 +692,9 @@ img {
 }
 
 
-/* ===============================
+/* =========================================
    DECORATIONS
-================================ */
+========================================= */
 
 .intro-decoration {
 
@@ -636,7 +705,9 @@ img {
   opacity: .4;
 
   animation:
-    decorationFloat 5s ease-in-out infinite;
+    decorationFloat 5s
+    ease-in-out infinite;
+
 }
 
 .decoration-one {
@@ -646,6 +717,7 @@ img {
   left: 12%;
 
   font-size: 25px;
+
 }
 
 .decoration-two {
@@ -655,6 +727,7 @@ img {
   right: 15%;
 
   font-size: 35px;
+
 }
 
 .decoration-three {
@@ -666,46 +739,288 @@ img {
   font-size: 22px;
 
   animation-delay: 1s;
+
 }
 
 @keyframes decorationFloat {
 
   0%,100% {
+
     transform:
       translateY(0)
       rotate(0);
+
   }
 
   50% {
+
     transform:
       translateY(-15px)
       rotate(8deg);
+
   }
 
 }
 
 
-/* ===============================
+/* =========================================
    MAIN
-================================ */
+========================================= */
 
 .hidden {
+
   display: none;
+
 }
 
 #main-content {
+
   opacity: 0;
-  transition: opacity 1.2s ease;
+
+  transition:
+    opacity 1.2s ease;
+
 }
 
 #main-content.visible {
+
   opacity: 1;
+
 }
 
 
-/* ===============================
+/* =========================================
+   MUSIC PLAYER
+========================================= */
+
+.music-player {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  z-index: 9990;
+
+  width: 270px;
+
+  min-height: 70px;
+
+  padding: 10px 15px 10px 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  background:
+    rgba(255,250,248,.92);
+
+  border:
+    1px solid
+    rgba(189,104,124,.18);
+
+  border-radius: 50px;
+
+  box-shadow:
+    0 15px 45px
+    rgba(112,50,66,.18);
+
+  backdrop-filter:
+    blur(15px);
+
+  transform:
+    translateY(120px);
+
+  opacity: 0;
+
+  transition:
+    transform .8s ease,
+    opacity .8s ease;
+
+}
+
+.music-player.show {
+
+  transform:
+    translateY(0);
+
+  opacity: 1;
+
+}
+
+.music-toggle {
+
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8899b,
+      #bd687c
+    );
+
+  color: white;
+
+  box-shadow:
+    0 7px 20px
+    rgba(189,104,124,.3);
+
+  transition:
+    transform .3s ease;
+
+}
+
+.music-toggle:hover {
+
+  transform:
+    scale(1.08);
+
+}
+
+.music-icon {
+
+  font-family: var(--serif);
+
+  font-size: 23px;
+
+}
+
+.music-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  flex: 1;
+
+}
+
+.music-label {
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color: var(--rose);
+
+}
+
+.music-info strong {
+
+  margin-top: 2px;
+
+  font-family: var(--serif);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+}
+
+.music-info small {
+
+  font-size: 8px;
+
+  color: var(--text-light);
+
+}
+
+.music-bars {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  height: 25px;
+
+}
+
+.music-bars i {
+
+  display: block;
+
+  width: 2px;
+
+  height: 7px;
+
+  border-radius: 2px;
+
+  background: var(--rose);
+
+  animation:
+    musicBars .8s
+    ease-in-out infinite;
+
+  animation-play-state: paused;
+
+}
+
+.music-bars i:nth-child(2) {
+
+  animation-delay: .15s;
+
+}
+
+.music-bars i:nth-child(3) {
+
+  animation-delay: .3s;
+
+}
+
+.music-bars i:nth-child(4) {
+
+  animation-delay: .45s;
+
+}
+
+.music-player.playing
+.music-bars i {
+
+  animation-play-state:
+    running;
+
+}
+
+@keyframes musicBars {
+
+  0%,100% {
+
+    height: 6px;
+
+  }
+
+  50% {
+
+    height: 22px;
+
+  }
+
+}
+
+
+/* =========================================
    SECTIONS
-================================ */
+========================================= */
 
 .section {
 
@@ -718,15 +1033,17 @@ img {
 
 .section-container {
 
-  width: min(1100px, 100%);
+  width:
+    min(1100px, 100%);
 
   margin: auto;
+
 }
 
 
-/* ===============================
+/* =========================================
    HERO
-================================ */
+========================================= */
 
 .hero {
 
@@ -748,6 +1065,7 @@ img {
       #fae4e8 60%,
       #f2ccd5
     );
+
 }
 
 .hero-content {
@@ -755,6 +1073,7 @@ img {
   position: relative;
 
   z-index: 2;
+
 }
 
 .hero-number {
@@ -762,16 +1081,18 @@ img {
   font-family: var(--serif);
 
   font-size:
-    clamp(150px, 30vw, 300px);
+    clamp(150px,30vw,300px);
 
   line-height: .7;
 
   color: transparent;
 
   -webkit-text-stroke:
-    1px rgba(189,104,124,.3);
+    1px
+    rgba(189,104,124,.3);
 
   opacity: .8;
+
 }
 
 .hero-label {
@@ -783,6 +1104,7 @@ img {
   font-size: 9px;
 
   color: var(--rose);
+
 }
 
 .hero-title {
@@ -794,9 +1116,10 @@ img {
   font-weight: 500;
 
   font-size:
-    clamp(55px, 9vw, 105px);
+    clamp(55px,9vw,105px);
 
   line-height: .85;
+
 }
 
 .hero-title span {
@@ -804,6 +1127,7 @@ img {
   color: var(--rose);
 
   font-style: italic;
+
 }
 
 .hero-message {
@@ -815,18 +1139,21 @@ img {
   line-height: 1.8;
 
   color: var(--text-light);
+
 }
 
 .scroll-button {
 
   margin-top: 45px;
 
-  padding: 14px 25px;
+  padding:
+    14px 25px;
 
   background: transparent;
 
   border:
-    1px solid rgba(189,104,124,.4);
+    1px solid
+    rgba(189,104,124,.4);
 
   color: var(--rose);
 
@@ -837,6 +1164,7 @@ img {
   text-transform: uppercase;
 
   transition: .4s;
+
 }
 
 .scroll-button:hover {
@@ -845,7 +1173,9 @@ img {
 
   color: white;
 
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
+
 }
 
 .scroll-button span {
@@ -853,6 +1183,7 @@ img {
   margin-left: 10px;
 
   font-size: 16px;
+
 }
 
 .hero-flower {
@@ -861,33 +1192,42 @@ img {
 
   font-size: 150px;
 
-  color: rgba(216,137,155,.12);
+  color:
+    rgba(216,137,155,.12);
+
 }
 
 .flower-left {
 
   left: -40px;
+
   bottom: 50px;
 
-  transform: rotate(-25deg);
+  transform:
+    rotate(-25deg);
+
 }
 
 .flower-right {
 
   right: -40px;
+
   top: 80px;
 
-  transform: rotate(25deg);
+  transform:
+    rotate(25deg);
+
 }
 
 
-/* ===============================
+/* =========================================
    ABOUT
-================================ */
+========================================= */
 
 .about {
 
   background: var(--ivory);
+
 }
 
 .about-card {
@@ -896,7 +1236,8 @@ img {
 
   margin: auto;
 
-  padding: 80px 50px;
+  padding:
+    80px 50px;
 
   text-align: center;
 
@@ -908,11 +1249,11 @@ img {
     );
 
   border:
-    1px solid rgba(199,164,119,.25);
+    1px solid
+    rgba(199,164,119,.25);
 
   box-shadow: var(--shadow);
 
-  position: relative;
 }
 
 .about-ornament {
@@ -924,6 +1265,7 @@ img {
   color: var(--gold);
 
   margin-bottom: 15px;
+
 }
 
 .about-card h2 {
@@ -931,11 +1273,12 @@ img {
   font-family: var(--serif);
 
   font-size:
-    clamp(45px, 7vw, 75px);
+    clamp(45px,7vw,75px);
 
   line-height: .95;
 
   font-weight: 500;
+
 }
 
 .about-card h2 span {
@@ -943,19 +1286,22 @@ img {
   color: var(--rose);
 
   font-style: italic;
+
 }
 
 .about-card > p:not(.eyebrow) {
 
   max-width: 550px;
 
-  margin: 30px auto 0;
+  margin:
+    30px auto 0;
 
   line-height: 1.9;
 
   color: var(--text-light);
 
   font-size: 14px;
+
 }
 
 .signature {
@@ -969,6 +1315,7 @@ img {
   color: var(--rose);
 
   font-size: 20px;
+
 }
 
 .signature span {
@@ -976,12 +1323,13 @@ img {
   margin-left: 10px;
 
   color: var(--gold);
+
 }
 
 
-/* ===============================
+/* =========================================
    WISHES
-================================ */
+========================================= */
 
 .wishes-section {
 
@@ -991,6 +1339,7 @@ img {
       #fae8eb,
       #fff8f7
     );
+
 }
 
 .section-heading {
@@ -998,6 +1347,7 @@ img {
   text-align: center;
 
   margin-bottom: 60px;
+
 }
 
 .section-heading h2 {
@@ -1005,11 +1355,12 @@ img {
   font-family: var(--serif);
 
   font-size:
-    clamp(55px, 8vw, 85px);
+    clamp(55px,8vw,85px);
 
   line-height: .85;
 
   font-weight: 500;
+
 }
 
 .section-heading h2 span {
@@ -1017,6 +1368,7 @@ img {
   color: var(--rose);
 
   font-style: italic;
+
 }
 
 .section-heading > p:last-child {
@@ -1026,6 +1378,7 @@ img {
   color: var(--text-light);
 
   font-size: 13px;
+
 }
 
 .wishes-grid {
@@ -1033,23 +1386,26 @@ img {
   display: grid;
 
   grid-template-columns:
-    repeat(5, 1fr);
+    repeat(5,1fr);
 
   gap: 15px;
 
   max-width: 900px;
 
   margin: auto;
+
 }
 
 .wish-item {
 
   aspect-ratio: 1;
 
-  background: rgba(255,255,255,.7);
+  background:
+    rgba(255,255,255,.7);
 
   border:
-    1px solid rgba(189,104,124,.15);
+    1px solid
+    rgba(189,104,124,.15);
 
   display: flex;
 
@@ -1067,7 +1423,6 @@ img {
 
   position: relative;
 
-  overflow: hidden;
 }
 
 .wish-item::before {
@@ -1079,9 +1434,9 @@ img {
   inset: 6px;
 
   border:
-    1px solid rgba(199,164,119,.15);
+    1px solid
+    rgba(199,164,119,.15);
 
-  pointer-events: none;
 }
 
 .wish-item:hover {
@@ -1093,7 +1448,9 @@ img {
   background: white;
 
   box-shadow:
-    0 15px 35px rgba(145,77,94,.13);
+    0 15px 35px
+    rgba(145,77,94,.13);
+
 }
 
 .wish-number {
@@ -1103,6 +1460,7 @@ img {
   font-size: 34px;
 
   color: var(--rose);
+
 }
 
 .wish-flower {
@@ -1112,12 +1470,13 @@ img {
   font-size: 22px;
 
   color: var(--gold);
+
 }
 
 
-/* ===============================
+/* =========================================
    GARDEN
-================================ */
+========================================= */
 
 .garden {
 
@@ -1137,6 +1496,7 @@ img {
     );
 
   color: white;
+
 }
 
 .garden-background {
@@ -1151,6 +1511,7 @@ img {
       rgba(255,255,255,.2),
       transparent 35%
     );
+
 }
 
 .garden-container {
@@ -1166,11 +1527,13 @@ img {
   align-items: center;
 
   text-align: center;
+
 }
 
 .garden .eyebrow {
 
   color: #ffe8ed;
+
 }
 
 .garden-content h2 {
@@ -1178,11 +1541,12 @@ img {
   font-family: var(--serif);
 
   font-size:
-    clamp(55px, 8vw, 90px);
+    clamp(55px,8vw,90px);
 
   line-height: .85;
 
   font-weight: 500;
+
 }
 
 .garden-content h2 span {
@@ -1190,6 +1554,7 @@ img {
   font-style: italic;
 
   color: #fff0e2;
+
 }
 
 .garden-content p:not(.eyebrow) {
@@ -1203,11 +1568,13 @@ img {
   font-size: 14px;
 
   opacity: .85;
+
 }
 
 .gold-button {
 
-  padding: 16px 25px;
+  padding:
+    16px 25px;
 
   background: #fff8ed;
 
@@ -1220,18 +1587,24 @@ img {
   text-transform: uppercase;
 
   transition: .4s;
+
 }
 
 .gold-button:hover {
 
-  transform: translateY(-5px);
+  transform:
+    translateY(-5px);
 
   box-shadow:
-    0 15px 30px rgba(85,34,47,.2);
+    0 15px 30px
+    rgba(85,34,47,.2);
+
 }
 
 
-/* GARDEN FLOWERS */
+/* =========================================
+   GARDEN FLOWERS
+========================================= */
 
 .garden-flowers {
 
@@ -1242,6 +1615,7 @@ img {
   height: 300px;
 
   margin-top: 70px;
+
 }
 
 .stem {
@@ -1258,7 +1632,9 @@ img {
     rgba(255,255,255,.65);
 
   transition:
-    height 1.5s cubic-bezier(.2,.8,.2,1);
+    height 1.5s
+    cubic-bezier(.2,.8,.2,1);
+
 }
 
 .stem::after {
@@ -1268,43 +1644,31 @@ img {
   position: absolute;
 
   width: 40px;
+
   height: 20px;
 
-  border-radius: 100% 0;
+  border-radius:
+    100% 0;
 
   border:
-    1px solid rgba(255,255,255,.35);
+    1px solid
+    rgba(255,255,255,.35);
 
   left: -35px;
 
   top: 55%;
 
-  transform: rotate(-20deg);
+  transform:
+    rotate(-20deg);
+
 }
 
-.stem-1 {
-  left: 10%;
-}
-
-.stem-2 {
-  left: 25%;
-}
-
-.stem-3 {
-  left: 40%;
-}
-
-.stem-4 {
-  left: 58%;
-}
-
-.stem-5 {
-  left: 75%;
-}
-
-.stem-6 {
-  left: 90%;
-}
+.stem-1 { left: 10%; }
+.stem-2 { left: 25%; }
+.stem-3 { left: 40%; }
+.stem-4 { left: 58%; }
+.stem-5 { left: 75%; }
+.stem-6 { left: 90%; }
 
 .flower {
 
@@ -1321,7 +1685,9 @@ img {
   font-size: 55px;
 
   transition:
-    transform .8s cubic-bezier(.2,.8,.2,1);
+    transform .8s
+    cubic-bezier(.2,.8,.2,1);
+
 }
 
 .pink-flower {
@@ -1366,18 +1732,20 @@ img {
     translateX(-50%)
     scale(1)
     rotate(10deg);
+
 }
 
 
-/* ===============================
+/* =========================================
    MESSAGE
-================================ */
+========================================= */
 
 .message-section {
 
   background: #fffaf8;
 
   text-align: center;
+
 }
 
 .message-card {
@@ -1386,10 +1754,12 @@ img {
 
   margin: auto;
 
-  padding: 90px 40px;
+  padding:
+    90px 40px;
 
   border:
-    1px solid rgba(199,164,119,.25);
+    1px solid
+    rgba(199,164,119,.25);
 
   background:
     radial-gradient(
@@ -1401,7 +1771,6 @@ img {
 
   box-shadow: var(--shadow);
 
-  position: relative;
 }
 
 .message-card-decoration {
@@ -1411,6 +1780,7 @@ img {
   color: var(--gold);
 
   margin-bottom: 15px;
+
 }
 
 .message-card h2 {
@@ -1418,11 +1788,12 @@ img {
   font-family: var(--serif);
 
   font-size:
-    clamp(50px, 7vw, 75px);
+    clamp(50px,7vw,75px);
 
   line-height: .9;
 
   font-weight: 500;
+
 }
 
 .message-card h2 span {
@@ -1430,13 +1801,15 @@ img {
   color: var(--rose);
 
   font-style: italic;
+
 }
 
 .pink-button {
 
   margin-top: 35px;
 
-  padding: 17px 30px;
+  padding:
+    17px 30px;
 
   background: var(--rose);
 
@@ -1449,22 +1822,27 @@ img {
   text-transform: uppercase;
 
   transition: .4s;
+
 }
 
 .pink-button:hover {
 
-  background: var(--dark-pink);
+  background:
+    var(--dark-pink);
 
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
   box-shadow:
-    0 15px 30px rgba(143,76,96,.25);
+    0 15px 30px
+    rgba(143,76,96,.25);
+
 }
 
 
-/* ===============================
-   FINAL
-================================ */
+/* =========================================
+   FINAL LETTER
+========================================= */
 
 .final-section {
 
@@ -1480,6 +1858,7 @@ img {
       #f5d3db,
       #fffaf8
     );
+
 }
 
 .final-letter {
@@ -1488,19 +1867,20 @@ img {
 
   margin: auto;
 
-  padding: 80px 60px;
+  padding:
+    80px 60px;
 
   background:
     rgba(255,255,255,.8);
 
   border:
-    1px solid rgba(199,164,119,.35);
+    1px solid
+    rgba(199,164,119,.35);
 
   box-shadow: var(--shadow);
 
   text-align: center;
 
-  position: relative;
 }
 
 .letter-top {
@@ -1514,6 +1894,7 @@ img {
   color: var(--gold);
 
   margin-bottom: 35px;
+
 }
 
 .final-letter h2 {
@@ -1529,6 +1910,7 @@ img {
   color: var(--rose);
 
   margin-bottom: 30px;
+
 }
 
 .letter-text {
@@ -1538,6 +1920,7 @@ img {
   max-width: 550px;
 
   margin: auto;
+
 }
 
 .letter-text p {
@@ -1551,6 +1934,7 @@ img {
   line-height: 1.5;
 
   color: var(--text-light);
+
 }
 
 .final-signature {
@@ -1564,6 +1948,7 @@ img {
   color: var(--rose);
 
   font-size: 21px;
+
 }
 
 .final-signature strong {
@@ -1575,6 +1960,7 @@ img {
   font-weight: 500;
 
   margin-top: 5px;
+
 }
 
 .letter-bottom {
@@ -1584,22 +1970,26 @@ img {
   color: var(--gold);
 
   letter-spacing: 10px;
+
 }
 
 
-/* ===============================
+/* =========================================
    FOOTER
-================================ */
+========================================= */
 
 footer {
 
-  padding: 60px 20px;
+  padding:
+    60px 20px;
 
   text-align: center;
 
-  background: #8f4c60;
+  background:
+    #8f4c60;
 
   color: white;
+
 }
 
 .footer-flower {
@@ -1609,6 +1999,7 @@ footer {
   margin-bottom: 15px;
 
   color: #f9dbe1;
+
 }
 
 footer p {
@@ -1618,6 +2009,7 @@ footer p {
   font-size: 20px;
 
   font-style: italic;
+
 }
 
 footer span {
@@ -1633,12 +2025,13 @@ footer span {
   text-transform: uppercase;
 
   opacity: .6;
+
 }
 
 
-/* ===============================
-   MODAL
-================================ */
+/* =========================================
+   MODALS
+========================================= */
 
 .modal {
 
@@ -1660,6 +2053,7 @@ footer span {
   visibility: hidden;
 
   transition: .5s;
+
 }
 
 .modal.active {
@@ -1667,6 +2061,7 @@ footer span {
   opacity: 1;
 
   visibility: visible;
+
 }
 
 .modal-overlay {
@@ -1680,14 +2075,17 @@ footer span {
 
   backdrop-filter:
     blur(8px);
+
 }
 
 .wish-modal-content,
 .message-modal-content {
 
-  width: min(550px, 100%);
+  width:
+    min(550px,100%);
 
-  padding: 70px 40px;
+  padding:
+    70px 40px;
 
   background:
     linear-gradient(
@@ -1703,13 +2101,15 @@ footer span {
   text-align: center;
 
   box-shadow:
-    0 30px 80px rgba(50,20,30,.3);
+    0 30px 80px
+    rgba(50,20,30,.3);
 
   transform:
     translateY(30px)
     scale(.95);
 
   transition: .5s;
+
 }
 
 .modal.active
@@ -1721,6 +2121,7 @@ footer span {
   transform:
     translateY(0)
     scale(1);
+
 }
 
 .close-modal {
@@ -1728,9 +2129,11 @@ footer span {
   position: absolute;
 
   right: 20px;
+
   top: 15px;
 
   width: 35px;
+
   height: 35px;
 
   background: transparent;
@@ -1739,7 +2142,6 @@ footer span {
 
   font-size: 28px;
 
-  font-weight: 300;
 }
 
 .modal-flower {
@@ -1749,6 +2151,7 @@ footer span {
   color: var(--gold);
 
   margin-bottom: 15px;
+
 }
 
 .wish-modal-content h2,
@@ -1763,6 +2166,7 @@ footer span {
   color: var(--rose);
 
   margin-bottom: 20px;
+
 }
 
 .wish-modal-content > p:not(.eyebrow),
@@ -1775,6 +2179,7 @@ footer span {
   line-height: 1.5;
 
   color: var(--text-light);
+
 }
 
 .modal-heart {
@@ -1784,6 +2189,7 @@ footer span {
   color: var(--rose);
 
   font-size: 30px;
+
 }
 
 .message-modal-content h2 span {
@@ -1791,6 +2197,7 @@ footer span {
   display: block;
 
   font-style: italic;
+
 }
 
 .modal-signature {
@@ -1804,12 +2211,13 @@ footer span {
   color: var(--rose);
 
   font-size: 20px;
+
 }
 
 
-/* ===============================
+/* =========================================
    REVEAL
-================================ */
+========================================= */
 
 .reveal {
 
@@ -1821,6 +2229,7 @@ footer span {
   transition:
     opacity .9s ease,
     transform .9s ease;
+
 }
 
 .reveal.show {
@@ -1829,19 +2238,20 @@ footer span {
 
   transform:
     translateY(0);
+
 }
 
 
-/* ===============================
+/* =========================================
    RESPONSIVE
-================================ */
+========================================= */
 
 @media (max-width: 800px) {
 
   .wishes-grid {
 
     grid-template-columns:
-      repeat(4, 1fr);
+      repeat(4,1fr);
 
   }
 
@@ -1860,6 +2270,7 @@ footer span {
   }
 
 }
+
 
 @media (max-width: 600px) {
 
@@ -1887,7 +2298,7 @@ footer span {
   .wishes-grid {
 
     grid-template-columns:
-      repeat(3, 1fr);
+      repeat(3,1fr);
 
     gap: 10px;
 
@@ -1950,20 +2361,44 @@ footer span {
 
   }
 
+
+  /* MOBILE MUSIC */
+
+  .music-player {
+
+    right: 12px;
+
+    left: 12px;
+
+    bottom: 12px;
+
+    width: auto;
+
+    border-radius: 20px;
+
+  }
+
+  .music-info strong {
+
+    font-size: 14px;
+
+  }
+
+  .music-bars {
+
+    display: none;
+
+  }
+
 }
+
 
 @media (max-width: 400px) {
 
   .wishes-grid {
 
     grid-template-columns:
-      repeat(3, 1fr);
-
-  }
-
-  .wish-item {
-
-    min-width: 0;
+      repeat(3,1fr);
 
   }
 
