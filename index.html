@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7dfe5">
 
   <title>Happy 31st Birthday, Mom ♡</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- =========================================
+       CURSOR GLOW
+  ========================================== -->
+  <div class="cursor-glow"></div>
 
-  <!-- =====================================
-       BACKGROUND PARTICLES
-  ====================================== -->
+  <!-- =========================================
+       FLOATING PETALS
+  ========================================== -->
+  <div id="petals"></div>
 
-  <div id="particles"></div>
 
-
-  <!-- =====================================
+  <!-- =========================================
        LOADING SCREEN
-  ====================================== -->
-
+  ========================================== -->
   <div id="loader">
 
-    <div class="loader-content">
+    <div class="loader-card">
 
-      <div class="loader-flower">
-        ✿
+      <div class="loader-symbol">
+        ✦
       </div>
 
-      <p class="loader-small">
+      <p class="eyebrow">
         A little celebration
       </p>
 
       <h1>
-        is waiting for you...
+        Something beautiful
+        <br>
+        <em>is waiting for you.</em>
       </h1>
 
-      <div class="loader-line">
+      <div class="loader-progress">
         <span></span>
       </div>
 
-      <p class="loader-hint">
+      <small>
         please wait ♡
-      </p>
+      </small>
 
     </div>
 
   </div>
 
 
-  <!-- =====================================
-       INTRO / ENVELOPE
-  ====================================== -->
 
+  <!-- =========================================
+       INTRO / ENVELOPE
+  ========================================== -->
   <section id="intro">
 
-    <div class="intro-decoration decoration-one">
-      ✦
-    </div>
+    <div class="intro-orbit orbit-1"></div>
+    <div class="intro-orbit orbit-2"></div>
 
-    <div class="intro-decoration decoration-two">
-      ♡
-    </div>
-
-    <div class="intro-decoration decoration-three">
-      ✿
-    </div>
+    <span class="floating-symbol s1">✦</span>
+    <span class="floating-symbol s2">♡</span>
+    <span class="floating-symbol s3">✿</span>
 
 
     <div class="intro-content">
@@ -88,19 +89,24 @@
       <h1>
         For the most
         <br>
-        <span>beautiful Mom</span>
+        <em>beautiful Mom</em>
       </h1>
 
-      <p class="intro-description">
-        There is something special waiting inside.
+      <p class="intro-copy">
+        A tiny corner of the internet,
+        <br>
+        made with a whole lot of love.
       </p>
 
 
       <!-- ENVELOPE -->
 
       <div
-        class="envelope-wrapper"
         id="envelope"
+        class="envelope-wrapper"
+        role="button"
+        tabindex="0"
+        aria-label="Open birthday envelope"
       >
 
         <div class="envelope-shadow"></div>
@@ -129,11 +135,7 @@
 
 
           <div class="wax-seal">
-
-            <span>
-              ♡
-            </span>
-
+            ♡
           </div>
 
         </div>
@@ -142,13 +144,9 @@
 
 
       <p class="click-hint">
-
         <span>♡</span>
-
         click the envelope
-
         <span>♡</span>
-
       </p>
 
     </div>
@@ -156,19 +154,19 @@
   </section>
 
 
-  <!-- =====================================
-       MAIN CONTENT
-  ====================================== -->
 
+  <!-- =========================================
+       MAIN WEBSITE
+  ========================================== -->
   <main
     id="main-content"
     class="hidden"
   >
 
 
-    <!-- =================================
+    <!-- =======================================
          MUSIC PLAYER
-    ================================== -->
+    ======================================== -->
 
     <div
       id="musicPlayer"
@@ -195,10 +193,7 @@
         aria-label="Play or pause music"
       >
 
-        <span
-          id="musicIcon"
-          class="music-icon"
-        >
+        <span id="musicIcon">
           ♪
         </span>
 
@@ -207,7 +202,7 @@
 
       <div class="music-info">
 
-        <span class="music-label">
+        <span>
           NOW PLAYING
         </span>
 
@@ -234,19 +229,22 @@
     </div>
 
 
-    <!-- =================================
-         HERO
-    ================================== -->
+
+    <!-- =======================================
+         HERO SECTION
+    ======================================== -->
 
     <section class="hero section">
 
-      <div class="hero-glow"></div>
+      <div class="hero-stars">
+        ✦　·　♡　·　✦
+      </div>
 
 
       <div class="hero-content">
 
         <p class="eyebrow reveal">
-          August 19, 2026 · A beautiful day
+          A beautiful day · 31 years of wonderful
         </p>
 
 
@@ -255,35 +253,35 @@
         </div>
 
 
-        <p class="hero-label reveal">
+        <div class="hero-label reveal">
           YEARS OF BEING WONDERFUL
-        </p>
+        </div>
 
 
         <h1 class="hero-title reveal">
 
           Happy Birthday,
 
-          <span>
-            Mom
-          </span>
+          <br>
+
+          <em>Mom</em>
 
         </h1>
 
 
         <p class="hero-message reveal">
 
-          Today isn't just about another year.
+          Today isn't just another year.
 
           <br>
 
-          It's about celebrating the beautiful woman you are.
+          It's a celebration of the beautiful woman you are.
 
         </p>
 
 
         <button
-          class="scroll-button reveal"
+          class="outline-button reveal"
           onclick="scrollToSection('wishes')"
         >
 
@@ -298,64 +296,89 @@
       </div>
 
 
-      <div class="hero-flower flower-left">
+      <div class="hero-bloom bloom-left">
         ✿
       </div>
 
-      <div class="hero-flower flower-right">
+      <div class="hero-bloom bloom-right">
         ✿
       </div>
 
     </section>
 
 
-    <!-- =================================
-         ABOUT MOM
-    ================================== -->
+
+    <!-- =======================================
+         ABOUT / MESSAGE
+    ======================================== -->
 
     <section class="about section">
 
       <div class="section-container">
 
-        <div class="about-card reveal">
+        <div class="about-layout">
 
-          <div class="about-ornament">
-            ❦
+
+          <div class="about-side reveal">
+
+            <span>
+              31
+            </span>
+
+            <small>
+              chapters
+              <br>
+              of you
+            </small>
+
           </div>
 
-          <p class="eyebrow">
-            A little reminder
-          </p>
 
 
-          <h2>
+          <div class="about-card reveal">
 
-            You deserve to be
-
-            <span>
-              celebrated.
-            </span>
-
-          </h2>
+            <div class="ornament">
+              ❦
+            </div>
 
 
-          <p>
-
-            For every smile you give, every little thing you do,
-            every moment you make warmer and every person you make
-            feel loved — today is a reminder that you deserve
-            that same love back.
-
-          </p>
+            <p class="eyebrow">
+              A little reminder
+            </p>
 
 
-          <div class="signature">
+            <h2>
 
-            with all my love
+              You deserve to be
 
-            <span>
-              ♡
-            </span>
+              <em>
+                celebrated.
+              </em>
+
+            </h2>
+
+
+            <p>
+
+              For every smile you give,
+              every little thing you do,
+              every moment you make warmer
+              and every person you make feel loved —
+              today is a reminder that you deserve
+              that same love back.
+
+            </p>
+
+
+            <div class="signature">
+
+              with all my love
+
+              <span>
+                ♡
+              </span>
+
+            </div>
 
           </div>
 
@@ -366,9 +389,10 @@
     </section>
 
 
-    <!-- =================================
+
+    <!-- =======================================
          31 WISHES
-    ================================== -->
+    ======================================== -->
 
     <section
       id="wishes"
@@ -389,37 +413,45 @@
 
             31 Little
 
-            <span>
+            <em>
               Wishes
-            </span>
+            </em>
 
           </h2>
 
 
           <p>
-            Tap each little flower to reveal a wish made especially for you.
+
+            Choose a flower.
+            Each one hides a little wish
+            made especially for you.
+
           </p>
 
         </div>
 
 
+        <!-- Generated automatically by JS -->
+
         <div
-          class="wishes-grid"
           id="wishesGrid"
+          class="wishes-grid"
         ></div>
+
 
       </div>
 
     </section>
 
 
-    <!-- =================================
+
+    <!-- =======================================
          FLOWER GARDEN
-    ================================== -->
+    ======================================== -->
 
     <section class="garden section">
 
-      <div class="garden-background"></div>
+      <div class="garden-noise"></div>
 
 
       <div class="section-container garden-container">
@@ -436,17 +468,18 @@
 
             May your life
 
-            <span>
+            <em>
               always bloom.
-            </span>
+            </em>
 
           </h2>
 
 
           <p>
 
-            Every flower represents something beautiful
-            I wish life will bring you this year.
+            Every flower represents something
+            beautiful I wish life will bring you
+            this year.
 
           </p>
 
@@ -463,14 +496,13 @@
         </div>
 
 
-        <div
-          id="gardenFlowers"
-          class="garden-flowers"
-        >
+
+        <div class="garden-flowers">
+
 
           <div class="stem stem-1">
 
-            <div class="flower pink-flower">
+            <div class="flower">
               ✿
             </div>
 
@@ -479,7 +511,7 @@
 
           <div class="stem stem-2">
 
-            <div class="flower cream-flower">
+            <div class="flower">
               ✿
             </div>
 
@@ -488,7 +520,7 @@
 
           <div class="stem stem-3">
 
-            <div class="flower rose-flower">
+            <div class="flower">
               ✿
             </div>
 
@@ -497,7 +529,7 @@
 
           <div class="stem stem-4">
 
-            <div class="flower pink-flower">
+            <div class="flower">
               ✿
             </div>
 
@@ -506,7 +538,7 @@
 
           <div class="stem stem-5">
 
-            <div class="flower cream-flower">
+            <div class="flower">
               ✿
             </div>
 
@@ -515,11 +547,12 @@
 
           <div class="stem stem-6">
 
-            <div class="flower rose-flower">
+            <div class="flower">
               ✿
             </div>
 
           </div>
+
 
         </div>
 
@@ -528,13 +561,15 @@
     </section>
 
 
-    <!-- =================================
-         MESSAGE
-    ================================== -->
+
+    <!-- =======================================
+         POPUP MESSAGE SECTION
+    ======================================== -->
 
     <section class="message-section section">
 
       <div class="section-container">
+
 
         <div class="message-card reveal">
 
@@ -552,9 +587,9 @@
 
             There is a little
 
-            <span>
+            <em>
               message
-            </span>
+            </em>
 
             for you.
 
@@ -572,67 +607,64 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <!-- =================================
+
+    <!-- =======================================
          FINAL LETTER
-    ================================== -->
+    ======================================== -->
 
     <section class="final-section section">
 
-      <div class="final-glow"></div>
-
-
       <div class="section-container">
+
 
         <div class="final-letter reveal">
 
 
           <div class="letter-top">
 
-            <span>
-              ✦
-            </span>
-
-            <span>
-              ♡
-            </span>
-
-            <span>
-              ✦
-            </span>
+            ✦　♡　✦
 
           </div>
 
 
           <p class="eyebrow">
+
             From my heart to yours
+
           </p>
 
 
           <h2>
+
             Dear Mom,
+
           </h2>
 
 
           <div class="letter-text">
 
+
             <p>
 
-              Happy 31st birthday to the woman who deserves
-              every beautiful thing this world can offer.
+              Happy 31st birthday to the woman
+              who deserves every beautiful thing
+              this world can offer.
 
             </p>
 
 
             <p>
 
-              I hope this new chapter brings you softer days,
-              genuine happiness, peaceful mornings, beautiful
-              surprises and countless reasons to smile.
+              I hope this new chapter brings you
+              softer days, genuine happiness,
+              peaceful mornings, beautiful surprises
+              and countless reasons to smile.
 
             </p>
 
@@ -648,10 +680,12 @@
 
             <p>
 
-              May you continue to grow, bloom and become
-              an even happier version of yourself.
+              May you continue to grow,
+              bloom and become an even happier
+              version of yourself.
 
             </p>
+
 
           </div>
 
@@ -668,8 +702,11 @@
 
 
           <div class="letter-bottom">
+
             ✿ · ✦ · ♡ · ✦ · ✿
+
           </div>
+
 
         </div>
 
@@ -678,13 +715,14 @@
     </section>
 
 
-    <!-- =================================
+
+    <!-- =======================================
          FOOTER
-    ================================== -->
+    ======================================== -->
 
     <footer>
 
-      <div class="footer-flower">
+      <div>
         ✿
       </div>
 
@@ -700,12 +738,14 @@
 
     </footer>
 
+
   </main>
 
 
-  <!-- =====================================
+
+  <!-- =========================================
        WISH MODAL
-  ====================================== -->
+  ========================================== -->
 
   <div
     id="wishModal"
@@ -715,7 +755,8 @@
     <div class="modal-overlay"></div>
 
 
-    <div class="wish-modal-content">
+    <div class="modal-content">
+
 
       <button
         class="close-modal"
@@ -749,14 +790,16 @@
         ♡
       </div>
 
+
     </div>
 
   </div>
 
 
-  <!-- =====================================
-       MESSAGE MODAL
-  ====================================== -->
+
+  <!-- =========================================
+       PERSONAL MESSAGE MODAL
+  ========================================== -->
 
   <div
     id="messageModal"
@@ -766,7 +809,8 @@
     <div class="modal-overlay"></div>
 
 
-    <div class="message-modal-content">
+    <div class="modal-content message-modal">
+
 
       <button
         class="close-modal"
@@ -790,17 +834,18 @@
 
         You are someone's
 
-        <span>
+        <em>
           favorite person.
-        </span>
+        </em>
 
       </h2>
 
 
       <p>
 
-        And I hope you always remember that your presence
-        makes life a little softer, a little warmer,
+        And I hope you always remember
+        that your presence makes life
+        a little softer, a little warmer,
         and so much more beautiful.
 
       </p>
@@ -808,17 +853,24 @@
 
       <div class="modal-signature">
 
-        You are loved. Always. ♡
+        You are loved.
+
+        Always. ♡
 
       </div>
+
 
     </div>
 
   </div>
 
 
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
   <script src="script.js"></script>
 
 </body>
-
 </html>
