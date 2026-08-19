@@ -88,3 +88,69 @@ footer{padding:65px 20px;text-align:center;background:#87485a;color:white}footer
 /* responsive */
 @media(max-width:800px){.wishes-grid{grid-template-columns:repeat(4,1fr)}.about-layout{grid-template-columns:1fr}.about-side{display:none}.about-card{padding:60px 30px}.final-letter{padding:60px 30px}}
 @media(max-width:600px){.cursor-glow{display:none}.section{padding:88px 18px}.envelope-wrapper{width:270px;height:188px}.wishes-grid{grid-template-columns:repeat(3,1fr);gap:9px}.wish-number{font-size:28px}.wish-flower{font-size:17px;bottom:14px}.music-player{left:12px;right:12px;bottom:12px;width:auto;border-radius:20px}.music-bars{display:none}.final-letter{padding:55px 22px}.final-letter h2{font-size:52px}.letter-text p{font-size:18px}.garden-flowers{height:220px}.flower{font-size:42px}.hero-bloom{font-size:110px}.intro-content h1{font-size:55px}}
+/* =========================================
+   🌸 FLOWER CONFETTI
+========================================= */
+
+.flower-confetti {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    animation:
+        flowerBurst 1s cubic-bezier(.17,.67,.35,1.35) forwards,
+        flowerFall 2.8s ease-in forwards;
+
+    will-change: transform, top, left, opacity;
+}
+
+@keyframes flowerBurst {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    30% {
+        transform:
+            translate(
+                calc(-50% + var(--x) * .35),
+                calc(-50% + var(--y) * .15)
+            )
+            scale(1.3)
+            rotate(calc(var(--rotate) * .3));
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1)
+            rotate(var(--rotate));
+
+        opacity: 0;
+    }
+}
+
+@keyframes flowerFall {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
