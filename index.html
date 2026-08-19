@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Mom ♡ | 31st Birthday</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       LOADING SCREEN
+  ========================== -->
+  <div id="loader">
+    <div class="loader-content">
+
+      <div class="loader-flower">✿</div>
+
+      <p class="loader-small">A little celebration</p>
+
+      <h1>is waiting for you...</h1>
+
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <p class="loader-hint">please wait ♡</p>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       FLOATING DECORATION
+  ========================== -->
+  <div id="particles"></div>
+
+
+  <!-- =========================
+       ENVELOPE INTRO
+  ========================== -->
+  <section id="intro">
+
+    <div class="intro-decoration decoration-one">✦</div>
+    <div class="intro-decoration decoration-two">♡</div>
+    <div class="intro-decoration decoration-three">✿</div>
+
+    <div class="intro-content">
+
+      <p class="eyebrow">A special little surprise</p>
+
+      <h1>
+        For the most<br>
+        <span>beautiful Mom</span>
+      </h1>
+
+      <p class="intro-description">
+        There is something special waiting inside.
+      </p>
+
+      <div class="envelope-wrapper" id="envelope">
+
+        <div class="envelope-shadow"></div>
+
+        <div class="envelope">
+
+          <div class="envelope-back"></div>
+
+          <div class="letter-preview">
+            <span>For Mom</span>
+            <small>with love ♡</small>
+          </div>
+
+          <div class="envelope-front"></div>
+
+          <div class="envelope-flap"></div>
+
+          <div class="wax-seal">
+            <span>♡</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="click-hint">
+        <span>♡</span> click the envelope <span>♡</span>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN WEBSITE
+  ========================== -->
+  <main id="main-content" class="hidden">
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero section">
+
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow reveal">
+          August 19, 2026 · A beautiful day
+        </p>
+
+        <div class="hero-number reveal">
+          31
+        </div>
+
+        <p class="hero-label reveal">
+          YEARS OF BEING WONDERFUL
+        </p>
+
+        <h1 class="hero-title reveal">
+          Happy Birthday,
+          <span>Mom</span>
+        </h1>
+
+        <p class="hero-message reveal">
+          Today isn't just about another year.
+          <br>
+          It's about celebrating the beautiful woman you are.
+        </p>
+
+        <button class="scroll-button reveal" onclick="scrollToSection('wishes')">
+          discover your wishes
+          <span>↓</span>
+        </button>
+
+      </div>
+
+      <div class="hero-flower flower-left">✿</div>
+      <div class="hero-flower flower-right">✿</div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT MOM
+    ========================== -->
+    <section class="about section">
+
+      <div class="section-container">
+
+        <div class="about-card reveal">
+
+          <div class="about-ornament">❦</div>
+
+          <p class="eyebrow">A little reminder</p>
+
+          <h2>
+            You deserve to be
+            <span>celebrated.</span>
+          </h2>
+
+          <p>
+            For every smile you give, every little thing you do,
+            every moment you make warmer and every person you make
+            feel loved — today is a reminder that you deserve
+            that same love back.
+          </p>
+
+          <div class="signature">
+            with all my love
+            <span>♡</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         31 WISHES
+    ========================== -->
+    <section id="wishes" class="wishes-section section">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <p class="eyebrow">For your 31st</p>
+
+          <h2>
+            31 Little
+            <span>Wishes</span>
+          </h2>
+
+          <p>
+            Tap each little flower to reveal a wish made especially for you.
+          </p>
+
+        </div>
+
+
+        <div class="wishes-grid" id="wishesGrid"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FLOWER GARDEN
+    ========================== -->
+    <section class="garden section">
+
+      <div class="garden-background"></div>
+
+      <div class="section-container garden-container">
+
+        <div class="garden-content reveal">
+
+          <p class="eyebrow">
+            A garden made for you
+          </p>
+
+          <h2>
+            May your life
+            <span>always bloom.</span>
+          </h2>
+
+          <p>
+            Every flower represents something beautiful I wish
+            life will bring you this year.
+          </p>
+
+          <button id="bloomButton" class="gold-button">
+            ✿ Make the garden bloom
+          </button>
+
+        </div>
+
+
+        <div id="gardenFlowers" class="garden-flowers">
+
+          <div class="stem stem-1">
+            <div class="flower pink-flower">✿</div>
+          </div>
+
+          <div class="stem stem-2">
+            <div class="flower cream-flower">✿</div>
+          </div>
+
+          <div class="stem stem-3">
+            <div class="flower rose-flower">✿</div>
+          </div>
+
+          <div class="stem stem-4">
+            <div class="flower pink-flower">✿</div>
+          </div>
+
+          <div class="stem stem-5">
+            <div class="flower cream-flower">✿</div>
+          </div>
+
+          <div class="stem stem-6">
+            <div class="flower rose-flower">✿</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         POPUP MESSAGE
+    ========================== -->
+    <section class="message-section section">
+
+      <div class="section-container">
+
+        <div class="message-card reveal">
+
+          <div class="message-card-decoration">♡</div>
+
+          <p class="eyebrow">
+            One more thing...
+          </p>
+
+          <h2>
+            There is a little
+            <span>message</span>
+            for you.
+          </h2>
+
+          <button id="messageButton" class="pink-button">
+            Open my message ♡
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL LETTER
+    ========================== -->
+    <section class="final-section section">
+
+      <div class="final-glow"></div>
+
+      <div class="section-container">
+
+        <div class="final-letter reveal">
+
+          <div class="letter-top">
+            <span>✦</span>
+            <span>♡</span>
+            <span>✦</span>
+          </div>
+
+          <p class="eyebrow">
+            From my heart to yours
+          </p>
+
+          <h2>
+            Dear Mom,
+          </h2>
+
+          <div class="letter-text">
+
+            <p>
+              Happy 31st birthday to the woman who deserves
+              every beautiful thing this world can offer.
+            </p>
+
+            <p>
+              I hope this new chapter brings you softer days,
+              genuine happiness, peaceful mornings, beautiful
+              surprises and countless reasons to smile.
+            </p>
+
+            <p>
+              Never forget how special you are.
+              Not because of what you do for everyone else,
+              but simply because you are you.
+            </p>
+
+            <p>
+              May you continue to grow, bloom and become
+              an even happier version of yourself.
+            </p>
+
+          </div>
+
+          <div class="final-signature">
+            Happy 31st Birthday ♡
+            <strong>Mom</strong>
+          </div>
+
+          <div class="letter-bottom">
+            ✿ · ✦ · ♡ · ✦ · ✿
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+      <div class="footer-flower">✿</div>
+
+      <p>
+        made with love, just for you ♡
+      </p>
+
+      <span>
+        Happy Birthday, Mom · 31
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <!-- =========================
+       WISH POPUP
+  ========================== -->
+  <div id="wishModal" class="modal">
+
+    <div class="modal-overlay"></div>
+
+    <div class="wish-modal-content">
+
+      <button class="close-modal" onclick="closeWishModal()">
+        ×
+      </button>
+
+      <div class="modal-flower">✿</div>
+
+      <p class="eyebrow">
+        wish number <span id="wishNumber"></span>
+      </p>
+
+      <h2 id="wishTitle"></h2>
+
+      <p id="wishText"></p>
+
+      <div class="modal-heart">♡</div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       MESSAGE POPUP
+  ========================== -->
+  <div id="messageModal" class="modal">
+
+    <div class="modal-overlay"></div>
+
+    <div class="message-modal-content">
+
+      <button class="close-modal" id="closeMessage">
+        ×
+      </button>
+
+      <div class="modal-flower">
+        ♡
+      </div>
+
+      <p class="eyebrow">
+        just for you
+      </p>
+
+      <h2>
+        You are someone's
+        <span>favorite person.</span>
+      </h2>
+
+      <p>
+        And I hope you always remember that your presence
+        makes life a little softer, a little warmer,
+        and so much more beautiful.
+      </p>
+
+      <div class="modal-signature">
+        You are loved. Always. ♡
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
