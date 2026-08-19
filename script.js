@@ -1,30 +1,31 @@
 /* =====================================================
    ELEGANT BLUSH PINK
    31ST BIRTHDAY MOM
+   WITH MUSIC PLAYER
 ===================================================== */
 
 
-/* ===============================
-   LOADING SCREEN
-================================ */
+/* =========================================
+   LOADING
+========================================= */
 
 window.addEventListener("load", () => {
 
   setTimeout(() => {
 
-    const loader =
-      document.getElementById("loader");
-
-    loader.classList.add("hide");
+    document
+      .getElementById("loader")
+      .classList
+      .add("hide");
 
   }, 2300);
 
 });
 
 
-/* ===============================
+/* =========================================
    PARTICLES
-================================ */
+========================================= */
 
 const particleContainer =
   document.getElementById("particles");
@@ -36,6 +37,7 @@ const particleSymbols = [
   "✿",
   "·"
 ];
+
 
 function createParticle() {
 
@@ -68,6 +70,7 @@ function createParticle() {
     particle
   );
 
+
   setTimeout(() => {
 
     particle.remove();
@@ -76,65 +79,246 @@ function createParticle() {
 
 }
 
-setInterval(createParticle, 700);
+
+setInterval(
+  createParticle,
+  700
+);
 
 
-/* ===============================
+/* =========================================
    ENVELOPE
-================================ */
+========================================= */
 
 const envelope =
-  document.getElementById("envelope");
+  document.getElementById(
+    "envelope"
+  );
 
 const intro =
-  document.getElementById("intro");
+  document.getElementById(
+    "intro"
+  );
 
 const mainContent =
-  document.getElementById("main-content");
+  document.getElementById(
+    "main-content"
+  );
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+const music =
+  document.getElementById(
+    "birthdayMusic"
+  );
+
+const musicPlayer =
+  document.getElementById(
+    "musicPlayer"
+  );
+
+const musicToggle =
+  document.getElementById(
+    "musicToggle"
+  );
+
+const musicIcon =
+  document.getElementById(
+    "musicIcon"
+  );
+
+
+let musicStarted = false;
+
+
+/* =========================================
+   PLAY MUSIC
+========================================= */
+
+function startMusic() {
+
+  if (!music) return;
+
+
+  const playPromise =
+    music.play();
+
+
+  if (
+    playPromise !== undefined
+  ) {
+
+    playPromise
+      .then(() => {
+
+        musicStarted = true;
+
+        musicPlayer
+          .classList
+          .add("show");
+
+        musicPlayer
+          .classList
+          .add("playing");
+
+        musicIcon.innerText =
+          "Ⅱ";
+
+      })
+
+      .catch(() => {
+
+        /*
+          Browser may still block playback.
+          The player will remain available
+          for manual play.
+        */
+
+        musicPlayer
+          .classList
+          .add("show");
+
+      });
+
+  }
+
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+musicToggle.addEventListener(
+  "click",
+  () => {
+
+    if (
+      music.paused
+    ) {
+
+      music.play()
+        .then(() => {
+
+          musicPlayer
+            .classList
+            .add("playing");
+
+          musicIcon.innerText =
+            "Ⅱ";
+
+        })
+        .catch(() => {
+
+          console.log(
+            "Music could not be played."
+          );
+
+        });
+
+    } else {
+
+      music.pause();
+
+      musicPlayer
+        .classList
+        .remove("playing");
+
+      musicIcon.innerText =
+        "♪";
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   ENVELOPE CLICK
+========================================= */
 
 envelope.addEventListener(
   "click",
   () => {
 
     if (
-      envelope.classList.contains("open")
+      envelope
+        .classList
+        .contains("open")
     ) {
+
       return;
+
     }
 
-    envelope.classList.add("open");
+
+    envelope
+      .classList
+      .add("open");
+
+
+    /*
+      Start the birthday song
+      after the envelope opens.
+    */
+
+    setTimeout(() => {
+
+      startMusic();
+
+    }, 1000);
+
+
+    /*
+      Hide envelope screen.
+    */
 
     setTimeout(() => {
 
       intro.style.transition =
         "opacity 1.2s ease";
 
-      intro.style.opacity = "0";
+      intro.style.opacity =
+        "0";
 
     }, 1800);
 
+
+    /*
+      Show website.
+    */
+
     setTimeout(() => {
 
-      intro.style.display = "none";
+      intro.style.display =
+        "none";
 
-      mainContent.classList.remove(
-        "hidden"
-      );
+
+      mainContent
+        .classList
+        .remove("hidden");
+
 
       setTimeout(() => {
 
-        mainContent.classList.add(
-          "visible"
-        );
+        mainContent
+          .classList
+          .add("visible");
+
 
         initializeReveal();
 
       }, 100);
 
+
       window.scrollTo({
         top: 0,
         behavior: "instant"
       });
+
 
     }, 3000);
 
@@ -142,9 +326,9 @@ envelope.addEventListener(
 );
 
 
-/* ===============================
+/* =========================================
    SCROLL
-================================ */
+========================================= */
 
 function scrollToSection(id) {
 
@@ -153,6 +337,7 @@ function scrollToSection(id) {
 
   if (!section) return;
 
+
   section.scrollIntoView({
     behavior: "smooth"
   });
@@ -160,9 +345,9 @@ function scrollToSection(id) {
 }
 
 
-/* ===============================
+/* =========================================
    31 WISHES
-================================ */
+========================================= */
 
 const wishes = [
 
@@ -288,7 +473,7 @@ const wishes = [
 
   {
     title: "Wonderful News",
-    text: "May this year bring you many reasons to say, 'I am so happy this happened.'"
+    text: "May this year bring you many reasons to say, I am so happy this happened."
   },
 
   {
@@ -318,7 +503,7 @@ const wishes = [
 
   {
     title: "A Beautiful 31",
-    text: "And most importantly, may 31 be the beginning of one of your most beautiful chapters yet."
+    text: "May 31 be the beginning of one of your most beautiful chapters yet."
   }
 
 ];
@@ -336,10 +521,12 @@ wishes.forEach(
     const item =
       document.createElement("div");
 
+
     item.classList.add(
       "wish-item",
       "reveal"
     );
+
 
     item.innerHTML = `
 
@@ -352,6 +539,7 @@ wishes.forEach(
       </div>
 
     `;
+
 
     item.addEventListener(
       "click",
@@ -366,15 +554,18 @@ wishes.forEach(
       }
     );
 
-    wishesGrid.appendChild(item);
+
+    wishesGrid.appendChild(
+      item
+    );
 
   }
 );
 
 
-/* ===============================
+/* =========================================
    WISH MODAL
-================================ */
+========================================= */
 
 const wishModal =
   document.getElementById(
@@ -412,20 +603,24 @@ function openWishModal(
   wishText.textContent =
     text;
 
-  wishModal.classList.add(
-    "active"
-  );
+
+  wishModal
+    .classList
+    .add("active");
+
 
   document.body.style.overflow =
     "hidden";
+
 }
 
 
 function closeWishModal() {
 
-  wishModal.classList.remove(
-    "active"
-  );
+  wishModal
+    .classList
+    .remove("active");
+
 
   document.body.style.overflow =
     "";
@@ -441,9 +636,9 @@ wishModal
   );
 
 
-/* ===============================
+/* =========================================
    MESSAGE MODAL
-================================ */
+========================================= */
 
 const messageButton =
   document.getElementById(
@@ -465,9 +660,10 @@ messageButton.addEventListener(
   "click",
   () => {
 
-    messageModal.classList.add(
-      "active"
-    );
+    messageModal
+      .classList
+      .add("active");
+
 
     document.body.style.overflow =
       "hidden";
@@ -480,9 +676,10 @@ closeMessage.addEventListener(
   "click",
   () => {
 
-    messageModal.classList.remove(
-      "active"
-    );
+    messageModal
+      .classList
+      .remove("active");
+
 
     document.body.style.overflow =
       "";
@@ -497,9 +694,10 @@ messageModal
     "click",
     () => {
 
-      messageModal.classList.remove(
-        "active"
-      );
+      messageModal
+        .classList
+        .remove("active");
+
 
       document.body.style.overflow =
         "";
@@ -508,9 +706,9 @@ messageModal
   );
 
 
-/* ===============================
+/* =========================================
    FLOWER GARDEN
-================================ */
+========================================= */
 
 const bloomButton =
   document.getElementById(
@@ -527,14 +725,18 @@ bloomButton.addEventListener(
   "click",
   () => {
 
-    garden.classList.add(
-      "bloomed"
-    );
+    garden
+      .classList
+      .add("bloomed");
+
 
     bloomButton.innerHTML =
       "✿ Your garden is blooming ♡";
 
-    bloomButton.disabled = true;
+
+    bloomButton.disabled =
+      true;
+
 
     createBloomParticles();
 
@@ -542,9 +744,9 @@ bloomButton.addEventListener(
 );
 
 
-/* ===============================
+/* =========================================
    BLOOM PARTICLES
-================================ */
+========================================= */
 
 function createBloomParticles() {
 
@@ -557,47 +759,61 @@ function createBloomParticles() {
     const flower =
       document.createElement("div");
 
+
     flower.innerText =
       Math.random() > .5
         ? "✿"
         : "♡";
 
+
     flower.style.position =
       "fixed";
+
 
     flower.style.left =
       Math.random() * 100 + "%";
 
+
     flower.style.top =
       "60%";
+
 
     flower.style.zIndex =
       "100";
 
+
     flower.style.pointerEvents =
       "none";
+
 
     flower.style.color =
       "#ffe0e7";
 
+
     flower.style.fontSize =
       Math.random() * 15 + 10 + "px";
+
 
     document.body.appendChild(
       flower
     );
 
+
     const animation =
       flower.animate(
 
         [
+
           {
             transform:
               "translateY(0) scale(.3)",
+
             opacity: 0
+
           },
 
           {
+
             transform:
               `translateY(-${
                 Math.random() * 300 + 150
@@ -607,10 +823,13 @@ function createBloomParticles() {
                }px)
                rotate(180deg)
                scale(1)`,
+
             opacity: 1
+
           },
 
           {
+
             transform:
               `translateY(-${
                 Math.random() * 500 + 300
@@ -620,20 +839,25 @@ function createBloomParticles() {
                }px)
                rotate(360deg)
                scale(.5)`,
+
             opacity: 0
+
           }
 
         ],
 
         {
+
           duration:
             Math.random() * 1800 + 1800,
 
           easing:
             "cubic-bezier(.2,.8,.2,1)"
+
         }
 
       );
+
 
     animation.onfinish = () => {
 
@@ -646,9 +870,9 @@ function createBloomParticles() {
 }
 
 
-/* ===============================
+/* =========================================
    SCROLL REVEAL
-================================ */
+========================================= */
 
 function initializeReveal() {
 
@@ -656,6 +880,7 @@ function initializeReveal() {
     document.querySelectorAll(
       ".reveal"
     );
+
 
   const observer =
     new IntersectionObserver(
@@ -669,9 +894,10 @@ function initializeReveal() {
               entry.isIntersecting
             ) {
 
-              entry.target.classList.add(
-                "show"
-              );
+              entry.target
+                .classList
+                .add("show");
+
 
               observer.unobserve(
                 entry.target
@@ -704,9 +930,9 @@ function initializeReveal() {
 }
 
 
-/* ===============================
+/* =========================================
    ESCAPE KEY
-================================ */
+========================================= */
 
 document.addEventListener(
   "keydown",
@@ -718,9 +944,11 @@ document.addEventListener(
 
       closeWishModal();
 
-      messageModal.classList.remove(
-        "active"
-      );
+
+      messageModal
+        .classList
+        .remove("active");
+
 
       document.body.style.overflow =
         "";
