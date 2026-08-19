@@ -145,3 +145,52 @@ function initReveal(){
   });
 }
 function scrollToSection(id){$("#"+id)?.scrollIntoView({behavior:"smooth"})}
+/* =========================================
+   🌸 FLOWER CONFETTI - SAAT ANGKA 31 MUNCUL
+========================================= */
+
+function createFlowerConfetti() {
+    const flowers = ["🌸", "🌺", "🌷", "🌼", "🌻", "💮", "🪻", "🌹"];
+
+    for (let i = 0; i < 45; i++) {
+        const flower = document.createElement("div");
+
+        flower.className = "flower-confetti";
+        flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+
+        // Posisi awal di sekitar angka 31
+        flower.style.left = `${45 + Math.random() * 10}%`;
+        flower.style.top = `${35 + Math.random() * 10}%`;
+
+        // Ukuran random
+        const size = 16 + Math.random() * 18;
+        flower.style.fontSize = `${size}px`;
+
+        // Arah jatuh random
+        const x = (Math.random() - 0.5) * 700;
+        const y = 450 + Math.random() * 500;
+        const rotate = (Math.random() - 0.5) * 1000;
+
+        flower.style.setProperty("--x", `${x}px`);
+        flower.style.setProperty("--y", `${y}px`);
+        flower.style.setProperty("--rotate", `${rotate}deg`);
+
+        // Delay sedikit agar muncul bertahap
+        flower.style.animationDelay = `${Math.random() * 0.7}s`;
+
+        document.body.appendChild(flower);
+
+        // Hapus setelah animasi selesai
+        setTimeout(() => {
+            flower.remove();
+        }, 3500);
+    }
+}
+
+
+/* Jalankan ketika angka 31 muncul */
+function triggerBirthdayConfetti() {
+    setTimeout(() => {
+        createFlowerConfetti();
+    }, 300);
+}
